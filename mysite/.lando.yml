@@ -1,0 +1,4 @@
+name: mysite
+recipe: wordpress
+config:
+  webroot: web
