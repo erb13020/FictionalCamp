@@ -16,6 +16,19 @@ function camp_features() {
 add_action('after_setup_theme', 'camp_features');
 
 function camp_adjust_queries($query) {
+
+  if (!is_admin() AND is_post_type_archive('activity') AND $query->is_main_query()) {
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+    $query->set('posts_per_page', -1);
+  }
+
+  if (!is_admin() AND is_post_type_archive('program') AND $query->is_main_query()) {
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+    $query->set('posts_per_page', -1);
+  }
+
 	if (!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()) {
 		$query->set('meta_key', 'event_date');
 		$query->set('orderby', 'meta_value_num');

@@ -2367,3 +2367,72 @@ margin: 20px 0;
   border-bottom: none;
   margin-bottom: 0;
 }
+
+.review {
+    background-color: #80808017;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, .07);
+    padding: 2% 4%;
+    justify-content: center;
+    display: inline-flex;
+    margin-top: 3rem;
+}
+
+.program-box {
+  width: 80%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media(max-width: 575px){
+  .program-box {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.u-df {
+  display: flex;
+}
+
+.u-dif {
+  display: inline-flex;
+}
+
+.u-db {
+  display: block;
+}
+
+.u-dib {
+  display: inline-block;
+}
+
+.u-mf {
+  display: flex;
+}
+
+@media (max-width: 575px){
+  .u-mf {
+    display: block;
+  }
+}
+
+.u-mtt {
+  margin-top: .25rem
+}
+
+.u-mts {
+  margin-top: .5rem;
+}
+
+.u-mtm {
+  margin-top: .75rem;
+}
+
+.u-mt {
+  margin-top: 1rem;
+}
+
+.u-mtl {
+  margin-top: 2rem;
+}
