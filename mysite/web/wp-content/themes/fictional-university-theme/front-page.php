@@ -17,7 +17,18 @@
         <?php 
           $homepageEvents = new WP_Query(array(
             'posts_per_page' => 2,
-            'post_type' => 'event'
+            'post_type' => 'event',
+            'meta_key' => 'event_date',
+            'orderby' => 'meta_value_num',
+            'order' => 'ASC',
+            'meta_query' => array (
+              array(
+                'key' => 'event_date',
+                'compare' => '>=',
+                'value' => date('Ymd'),
+                'type' => 'numeric'
+              )
+            )
           ));
 
           while($homepageEvents->have_posts()) {
