@@ -14,11 +14,10 @@
       <div class="site-header__menu group">
         <nav class="main-navigation">
           <ul>
-            <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 16) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
-            <li><a href="#">Programs</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Fictional Camp</a></li>
-            <li><a href="#">Blog</a></li>
+            <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 17) echo 'class="current-menu-item"' ?> ><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
+            <li <?php if (is_page('programs') or wp_get_post_parent_id(0) == 23) echo 'class="current-menu-item"' ?> ><a href="<?php echo site_url('/programs'); ?>">Programs</a></li>
+            <li <?php if (get_post_type() == 'event') echo 'class="current-menu-item"'?> ><a href="<?php echo get_post_type_archive_link('event') ?>">Events</a></li>
+            <li><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
           </ul>
         </nav>
         <div class="site-header__util">

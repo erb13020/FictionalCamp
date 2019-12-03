@@ -5,7 +5,7 @@
     <div class="page-banner__content container t-center c-white">
       <h1 class="headline headline--large">Welcome!</h1>
       <h2 class="headline headline--medium">We think you&rsquo;ll like it here.</h2>
-      <a href="#" class="btn btn--large btn--blue">Learn More</a>
+      <a href="<?php echo site_url('/about-us') ?>" class="btn btn--large btn--blue">Learn More</a>
     </div>
   </div>
 
@@ -29,13 +29,17 @@
               </a>
               <div class="event-summary__content">
                 <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                <p><?php echo wp_trim_words(get_the_content(), 18); ?> <a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a></p>
+                <p><?php if (has_excerpt()) {
+                  echo get_the_excerpt();
+                } else {
+                  echo wp_trim_words(get_the_content(), 18);
+                } ?> <a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a></p>
               </div>
             </div>
           <?php }
         ?>
         
-        <p class="t-center no-margin"><a href="#" class="btn btn--blue">View All Events</a></p>
+        <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event') ?>" class="btn btn--blue">View All Events</a></p>
 
       </div>
     </div>
