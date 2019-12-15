@@ -1,6 +1,6 @@
 /*
- Theme Name: Fictional University
- Author: Brad
+ Theme Name: Fictional Summer Camp
+ Author: Eric Burt
  Version: 1.0
 */
 
@@ -34,6 +34,37 @@ html {
 
 body {
   margin: 0;
+}
+
+body.login {
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.login form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 29px 45px 29px 45px;
+    border-radius: 7px;
+    background-color: rgba(255,255,255, 0.5);
+    position: relative;
+    line-height: 1.5;
+    width: 50%;
+}
+
+.login #login_error, .login .message, .login .success {
+    background-color: rgba(255,255,255, 0.5);
+    padding: 12px;
+    margin-left: 0;
+    margin-top: .5rem;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+#login {
+    width: 40%;
+    padding: 8% 0 0;
+    margin: auto;
 }
 
 /**
@@ -1017,53 +1048,36 @@ p, li {
 
 /* Like Box */
 
-.generic-content .like-box {
-  float: right;
+.like-box {
   font-size: 1rem;
   background-color: #EDEDED;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
   color: red;
-  padding: 10px 10px 10px 25px;
+  padding: 10px 10px 10px 10px;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0 0 30px 30px;
-  position: relative;
+  margin: auto 0 auto 20px;
+    display: flex;
 }
 
-.generic-content .like-box:hover {
+.like-box:hover {
   background-color: #DEDEDE;
 }
 
-.like-count {
-  padding-left: 10px;
+[data-exists="no"] {
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
 }
 
-.like-box .fa-heart-o {
-  transition: all .35s ease-out;
-  position: absolute;
-  left: 10px;
+[data-exists="yes"] {
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
 }
 
-.like-box .fa-heart {
-  left: 10px;
-  transition: all .4s ease-out;
-  position: absolute;
-  visibility: hidden;
-  -webkit-transform: scale(.2);
-          transform: scale(.2);
-  opacity: 0;
-}
-
-.like-box[data-exists="yes"] .fa-heart {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  visibility: visible;
-  opacity: 1;
-}
-
-.like-box[data-exists="yes"] .fa-heart-o {
-  visibility: hidden;
-  opacity: 0;
+.like-count{
+    margin-left: 2rem;
 }
 
 /* Customize Login Screen */
@@ -1183,6 +1197,9 @@ body.login {
   border-radius: 7px;
 }
 
+.btn--login {
+    width: 100%;
+}
 @media (min-width: 530px) {
 
   .btn--large {
@@ -2393,6 +2410,17 @@ margin: 20px 0;
   }
 }
 
+.u-w70p {
+  width: 70% !important;
+}
+
+.u-w100p {
+  width: 100% !important;
+}
+.u-di {
+  display: inline;
+}
+
 .u-df {
   display: flex;
 }
@@ -2442,6 +2470,32 @@ margin: 20px 0;
   margin-top: 2rem;
 }
 
+.u-ml0 {
+  margin-left: 0 !important;
+}
+
+.u-mlt {
+    margin-left: .25rem;
+}
+
+.u-mls {
+    margin-left: .5rem;
+}
+
+.u-mlm {
+    margin-left: 1rem;
+}
+
+.u-mll {
+    margin-left: 2rem;
+}
+.u-mr0 {
+  margin-right: 0 !important;
+}
+.u-mrt {
+  margin-right: .25rem !important;
+}
+
 .u-tdn {
   text-decoration: none !important;
 }
@@ -2457,6 +2511,14 @@ margin: 20px 0;
 .u-ma {
   margin-left: auto;
   margin-right: auto;
+}
+
+.u-fw700 {
+  font-weight: 700 !important;
+}
+
+.u-c-white{
+    color: #fff !important;
 }
 
 .activity-summary__title a {
@@ -2481,7 +2543,7 @@ margin: 20px 0;
   flex-wrap: wrap;
 }
 
-.col {
+.col-third {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 33%;
@@ -2490,4 +2552,162 @@ margin: 20px 0;
   list-style-type: none;
   text-align: center;
   padding-bottom: 1rem;
+}
+
+.col-search {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+  list-style-position: initial;
+  list-style-image: initial;
+  list-style-type: none;
+  padding-bottom: 1rem;
+  padding-left: 0 !important;
+}
+
+.metatext {
+  margin: 0;
+  font-size: .9rem;
+  color: rgb(168, 146, 56);
+  padding: 10px 10px;
+}
+
+.metaitems {
+  background-color: #FAF0CA;
+  padding: 10px 17px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.metatitle {
+  background-color: #0D3B66;
+  color: #FFF;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+@media (max-width: 575px) {
+  .metatitle {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.counselor_name {
+  color: #173f58;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6875rem;
+  font-weight: 400;
+  margin-bottom: 0rem !important;
+    padding-bottom: 5px;
+}
+
+.counselor_attribute{
+  color: #173f58;
+  margin-right: .25rem;
+  margin-bottom: 0 !important;
+  font-weight: 700;
+}
+
+.counselor_img {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 2rem;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.search_thumb {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.login_password-reset-link {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_password-reset-link a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.login_header {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    padding-left: 24px;
+    padding-top: 40px;
+}
+@media screen and (max-width: 600px) {
+    #login {
+        width: 100%;
+    }
+ .login-top {
+     margin-top: 4rem;
+ }
+
+    .login #login_error, .login .message, .login .success {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.login-top {
+    font-size: 2rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.login-register {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.login-register a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#user_login {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-size: 1rem;
+    padding: .75rem 0 .75rem 1rem;
+    border-radius: .25rem;
+    border: none;
+    height: auto;
+    width: 100%;
+    margin: .75rem 0;
+}
+
+#user_pass {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-size: 1rem;
+    padding: .75rem 0 .75rem 1rem;
+    border-radius: .25rem;
+    border: none;
+    height: auto;
+    width: 100%;
+    margin: .75rem 0;
+}
+
+#user_email {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-size: 1rem;
+    padding: .75rem 0 .75rem 1rem;
+    border-radius: .25rem;
+    border: none;
+    height: auto;
+    width: 100%;
+    margin: .75rem 0;
 }

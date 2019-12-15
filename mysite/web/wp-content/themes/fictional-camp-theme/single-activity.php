@@ -22,7 +22,7 @@
     <div class="u-mf">
       <div class="generic-content program-box"><?php the_field('activity_text'); ?></div>
 
-      <div>
+      <div class="u-tac">
         <?php 
           $image = get_field('activity_picture');
           $size = 'large'; // (thumbnail, medium, large, full or custom size)
@@ -34,7 +34,7 @@
           </div><?php
       } ?>
 
-        <div class="embed-container u-mts">
+        <div class="embed-container u-mts u-tac">
           <?php the_field('activity_video'); ?>
         </div>
       </div>
@@ -42,6 +42,18 @@
     </div>
 
     <div class="generic-content u-mts"><?php the_content(); ?></div>
+
+    <?php 
+      $related_Counselors = get_field('related_counselors');
+
+      if($related_Counselors != ''){
+        ?> <h2 class="metatitle u-w100p"><?php the_title(); ?> Counselors</h2> <?php
+        foreach($related_Counselors as $counselor) { ?>
+          <div class="counselor_name u-mts u-db u-tdn"><a class="u-tdn" href="<?php echo get_the_permalink($counselor); ?>"><?php echo get_the_title($counselor)?></a></div>
+
+        <?php }
+      }
+    ?>
     
 
 

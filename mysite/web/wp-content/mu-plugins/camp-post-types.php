@@ -3,6 +3,8 @@
 function camp_post_types() {
 	//events post type
   register_post_type('event', array(
+      'capability_type' => 'event',
+  	'map_meta_cap' => true,
   	'supports' => array('title', 'editor', 'excerpt'),
     'rewrite' => array('slug' => 'events'),
     'has_archive' => true,
@@ -17,7 +19,7 @@ function camp_post_types() {
     'menu_icon' => 'dashicons-calendar'
   ));
 
-  //Program
+  //Program post type
     register_post_type('program', array(
   	'supports' => array('title', 'editor'),
     'rewrite' => array('slug' => 'programs'),
@@ -33,8 +35,10 @@ function camp_post_types() {
     'menu_icon' => 'dashicons-awards'
   ));
 
-  //Activity
+  //Activity post type
     register_post_type('activity', array(
+        'capability_type' => 'activity',
+  	'map_meta_cap' => true,
   	'supports' => array('title', 'editor'),
     'rewrite' => array('slug' => 'activity'),
     'has_archive' => true,
@@ -48,6 +52,39 @@ function camp_post_types() {
     ),
     'menu_icon' => 'dashicons-universal-access'
   ));
+
+  //Counselors post type
+    register_post_type('counselor', array(
+    'show_in_rest' => true,
+    'supports' => array('title', 'editor'),
+    'rewrite' => array('slug' => 'counselors'),
+    'has_archive' => true,
+    'public' => true,
+    'labels' => array(
+      'name' => 'Counselors',
+      'add_new_item' => 'Add New Counselor',
+      'edit_item' => 'Edit Counselor',
+      'all_items' => 'All Counselors',
+      'singular_name' => 'Counselor'
+    ),
+    'menu_icon' => 'dashicons-buddicons-buddypress-logo'
+  ));
+
+    //Like Post Type
+    //Counselors post type
+    register_post_type('like', array(
+        'supports' => array('title'),
+        'public' => false,
+        'show_ui' => true,
+        'labels' => array(
+            'name' => 'Likes',
+            'add_new_item' => 'Add New Like',
+            'edit_item' => 'Edit Like',
+            'all_items' => 'All Likes',
+            'singular_name' => 'Like'
+        ),
+        'menu_icon' => 'dashicons-heart'
+    ));
 
 }
 

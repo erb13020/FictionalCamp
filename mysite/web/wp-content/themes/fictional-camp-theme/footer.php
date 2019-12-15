@@ -17,7 +17,9 @@
                 <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 16) echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
                 <li><a href="<?php echo site_url('/programs'); ?>">Programs</a></li>
                 <li><a href="<?php echo get_post_type_archive_link('event') ?>">Events</a></li>
+                <li><a href="<?php echo get_post_type_archive_link('activity') ?>">Activities</a></li>
                 <li><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
+                <li <?php if ((get_post_type() == 'counselor') or (is_page(113)) ) echo 'class="current-menu-item"'?> ><a href="<?php echo get_post_type_archive_link('counselor') ?>">Meet Our Staff</a></li>
               </ul>
             </nav>
           </div>

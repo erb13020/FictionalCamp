@@ -23,18 +23,26 @@
       <div class="generic-content program-box"><?php the_content(); ?></div>
 
       <div>
+        <div class="u-tac">
+          <div class="metatitle">Dates & Fees</div>
+          <div class="metaitems">
+            <div class="u-df metatext"><p class="u-mrt u-fw700">Dates: </p><p class="u-mrt"><?php the_field('date_start'); ?></p><p class="u-mrt"> to </p><p><?php the_field('date_end'); ?></p></div>
+            <div class="u-df metatext"><p class="u-mrt u-fw700">Tuition: </p><p><?php the_field('program_fees'); ?></p></div>
+          </div>
+        </div>
+
         <?php 
           $image = get_field('program_picture');
           $size = 'large'; // (thumbnail, medium, large, full or custom size)
           if( $image ) {
             ?>
-            <div><?php
+            <div class="u-tac"><?php
               echo wp_get_attachment_image( $image, $size );
             ?>
           </div><?php
       } ?>
 
-        <div class="embed-container u-mts">
+        <div class="embed-container u-mts u-tac">
           <?php the_field('program_video'); ?>
         </div>
       </div>

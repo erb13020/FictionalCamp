@@ -27,7 +27,7 @@ get_header(); ?>
           $size = 'large'; // (thumbnail, medium, large, full or custom size)
           if( $image ) {
             ?>
-            <div class="col">
+            <div class="col-third">
             <div class="u-dib">
             	<div class="activity-thumb"><a href="<?php the_permalink(); ?>"><?php
               echo wp_get_attachment_image( $image, $size );
@@ -47,3 +47,12 @@ get_header(); ?>
 <?php get_footer();
 
 ?>
+
+<div class="col-third">
+  <div class="u-dib">
+    <div class="activity-thumb">
+      <a href="<?php the_permalink(); ?>"><img src="something"></a>
+    </div>
+        <h5 class="activity-summary__title headline headline--tiny u-tac u-mtt"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+  </div>
+</div>
