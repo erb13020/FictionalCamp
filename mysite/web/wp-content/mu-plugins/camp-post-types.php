@@ -86,6 +86,22 @@ function camp_post_types() {
         'menu_icon' => 'dashicons-heart'
     ));
 
+    //Slide post type
+    register_post_type('slide', array(
+        'supports' => array('title'),
+        'rewrite' => array('slug' => 'slides'),
+        'has_archive' => false,
+        'public' => true,
+        'labels' => array(
+            'name' => 'Slides',
+            'add_new_item' => 'Add New Slide',
+            'edit_item' => 'Edit Slide',
+            'all_items' => 'All Slides',
+            'singular_name' => 'Slide'
+        ),
+        'menu_icon' => 'dashicons-format-video'
+    ));
+
 }
 
 add_action('init', 'camp_post_types');

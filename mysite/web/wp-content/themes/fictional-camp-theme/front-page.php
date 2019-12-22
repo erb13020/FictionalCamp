@@ -64,6 +64,8 @@
 
       </div>
     </div>
+
+
     <div class="full-width-split__two">
       <div class="full-width-split__inner">
         <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
@@ -99,34 +101,30 @@
     </div>
   </div>
 
-  <div class="hero-slider">
-  <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/friends.jpeg') ?>);">
-    <div class="hero-slider__interior container">
-      <div class="hero-slider__overlay">
-        <h2 class="headline headline--medium t-center">Camp Friends</h2>
-        <p class="t-center">Many campers start lifelong friendships</p>
-        <p class="t-center no-margin"><a href="#" class="btn btn--blue">Learn more</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/dining.jpg') ?>);">
-    <div class="hero-slider__interior container">
-      <div class="hero-slider__overlay">
-        <h2 class="headline headline--medium t-center">An Apple a Day</h2>
-        <p class="t-center">Our dining hall serves a variety of fresh and healthy food</p>
-        <p class="t-center no-margin"><a href="#" class="btn btn--blue">Learn more</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="hero-slider__slide" style="background-image: url(<?php echo get_theme_file_uri('/images/archery.jpg') ?>);">
-    <div class="hero-slider__interior container">
-      <div class="hero-slider__overlay">
-        <h2 class="headline headline--medium t-center">World Class Instruction</h2>
-        <p class="t-center">Fictional Summer Camp provides lessons in over 35 activities</p>
-        <p class="t-center no-margin"><a href="#" class="btn btn--blue">Learn more</a></p>
-      </div>
-    </div>
-  </div>
+<?php
+$homepageSlides = new WP_Query(array(
+    'posts_per_page' => -1,
+    'post_type' => 'slide',
+));
+?>
+<div class="hero-slider">
+    <?php
+while($homepageSlides->have_posts()) {
+    $homepageSlides->the_post();
+    ?>
+
+        <div class="hero-slider__slide" style="background-image: url(<?php echo wp_get_attachment_image_url( get_field('slide_image'), 'full' ); ?>);">
+            <div class="hero-slider__interior container">
+                <div class="hero-slider__overlay">
+                    <h2 class="headline headline--medium t-center"> <?php the_title();?> </h2>
+                    <p class="t-center"> <?php the_field('slide_subtitle');?> </p>
+                    <p class="t-center no-margin"><a href="<?php echo the_field('slide_link')?>" class="btn btn--blue"><?php the_field('link_text');?></a></p>
+                </div>
+            </div>
+        </div>
+
+<?php }
+?>
 </div>
 
   <?php get_footer();

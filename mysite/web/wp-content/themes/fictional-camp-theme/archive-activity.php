@@ -47,12 +47,3 @@ get_header(); ?>
 <?php get_footer();
 
 ?>
-
-<div class="col-third">
-  <div class="u-dib">
-    <div class="activity-thumb">
-      <a href="<?php the_permalink(); ?>"><img src="something"></a>
-    </div>
-        <h5 class="activity-summary__title headline headline--tiny u-tac u-mtt"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-  </div>
-</div>
