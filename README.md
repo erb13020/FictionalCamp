@@ -5,8 +5,8 @@ Business WordPress website featuring custom post types, live search results, and
 
 https://fictionalcamp.com/
 
-#Screenshots
+# Screenshots
 
-![alt test](pictures/Screenshot from 2020-01-05 15-21-57.png)
-![alt test](pictures/Screenshot from 2020-01-05 15-23-07.png)
-![alt test](pictures/Screenshot from 2020-01-05 15-24-42.png)
+![alt test](pictures/activities.png)
+![alt test](pictures/landing.png)
+![alt test](pictures/likefeature.png)
