@@ -7,7 +7,7 @@ https://fictionalcamp.com/
 
 # Screenshots
 
-![alt test](pictures/activities.png)
+![alt test](pictures/activites.png)
 ![alt test](pictures/landing.png)
 ![alt test](pictures/likefeature.png)
 ![alt test](pictures/search.png)
